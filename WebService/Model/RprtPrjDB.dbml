@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ReportProjectDB" Class="RprtPrjDBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=ReportProjectDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ReportProjectDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Reports" Member="Reports">
+    <Type Name="Report">
+      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ReportName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReportHeader" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReportQuery" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReportConnectionString" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.pInsReport" Method="pInsReport">
+    <Parameter Name="ReportName" Parameter="reportName" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ReportHeader" Parameter="reportHeader" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ReportQuery" Parameter="reportQuery" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="ReportConnectionString" Parameter="reportConnectionString" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.pSelReport" Method="pSelReport">
+    <Parameter Name="ReportID" Parameter="reportID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="pSelReportResult">
+      <Column Name="ReportID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ReportName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReportHeader" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReportQuery" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ReportConnectionString" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

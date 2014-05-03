@@ -39,6 +39,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -61,18 +62,38 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\RprtPrjDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RprtPrjDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RptRun.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportSel.cs" />
     <Compile Include="ReportSvc.asmx.cs">
       <DependentUpon>ReportSvc.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Model\RprtPrjDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RprtPrjDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Model\RprtPrjDB.dbml.layout">
+      <DependentUpon>RprtPrjDB.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <PropertyGroup>

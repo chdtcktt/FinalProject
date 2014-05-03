@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="RprtPrjDB">
+  <DataContextMoniker Name="/RprtPrjDBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7903c5a1-f5d2-47ab-95cb-1efc0de16b80" absoluteBounds="4.625, 2.125, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/RprtPrjDBDataContext/Report" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ba5fc45-aeb1-47b1-a7a3-b44977ccf917" absoluteBounds="4.6400000000000006, 2.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
