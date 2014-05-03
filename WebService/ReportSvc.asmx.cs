@@ -24,13 +24,7 @@ namespace WebService
         }
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Hello World";
-        }
-
-        [WebMethod]
-        public string GetReport(int id)
+        public List<string> GetReport(int id)
         {
             var report = new Report();
 
@@ -46,17 +40,9 @@ namespace WebService
                report.ReportQuery = item.ReportQuery;
            }
 
-           var viewData = RunRpt.RunSelRpt(report);
+           List<string> viewData = RunRpt.RunSelRpt(report);
 
-            
-           //var thing
-
-
-            //now get report from info 
-
-
-
-           return string.Empty;
+           return viewData;
         }
     }
 }
