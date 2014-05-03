@@ -28,7 +28,7 @@ namespace WebService.Model
                         returnData.Add(reader.GetString(item));
                         item++;
                     }
-
+                    conn.Close();
                     return returnData;
                 }
             }
