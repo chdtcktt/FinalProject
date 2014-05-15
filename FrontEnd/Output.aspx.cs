@@ -16,7 +16,6 @@ namespace FrontEnd
 
             ServiceReference1.ReportSvcSoapClient Svc = new ServiceReference1.ReportSvcSoapClient();
             
-            id++;
             List<string> collection = Svc.GetReport(id);
 
             string value = "";

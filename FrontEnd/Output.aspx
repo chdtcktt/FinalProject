@@ -2,5 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:TextBox ID="TextBox1" Rows="100" Columns="100" runat="server" TextMode="MultiLine"></asp:TextBox>
+    <div id="container">
+        <h3>Output</h3>
+            <asp:TextBox ID="TextBox1" Rows="30" Columns="100" runat="server" TextMode="MultiLine"></asp:TextBox>
+
+    </div>
 </asp:Content>

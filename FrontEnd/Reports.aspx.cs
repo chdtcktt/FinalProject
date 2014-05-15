@@ -19,15 +19,22 @@ namespace FrontEnd
         }
 
 
-        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+ 
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-             string v = Convert.ToString(e.CommandArgument);
-             Response.Redirect("Output.aspx?id=" + v);
+            var item = GridView1.SelectedRow.Cells[0].Text;
+
+
+            Response.Redirect("Output.aspx?id=" + item);
+
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
+   
 
-        }
+
+   
+   
+
+
     }
 }
