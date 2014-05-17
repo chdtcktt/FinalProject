@@ -11,13 +11,18 @@ namespace FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+         
 
         }
 
         protected void Login(object sender, EventArgs e)
         {            
             if (TxtUsername.Text == "testuser" && TxtPassword.Text == "testpassword")
+            {
+                Session["authentication"] = "o5kF4VGTwOMe7GMkwHSM";
                 Response.Redirect("Reports.aspx");
+
+            }
 
 
             LblMsg.Text = "-Login Failed";

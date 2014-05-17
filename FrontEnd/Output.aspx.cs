@@ -12,6 +12,13 @@ namespace FrontEnd
 
         protected void Page_Load(object sender, EventArgs e)
         {
+
+
+            if (Session["authentication"] != "o5kF4VGTwOMe7GMkwHSM")
+                Response.Redirect("Default.aspx");
+
+
+
             int id = Convert.ToInt32(Request.QueryString["id"]);
 
             ServiceReference1.ReportSvcSoapClient Svc = new ServiceReference1.ReportSvcSoapClient();

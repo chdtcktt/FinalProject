@@ -4,6 +4,7 @@
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
 
+<p>UserName: testuser, Password: testpassword</p>
 <div class="container login">
     <div class="row">
 		<div class="col-md-4 col-md-offset-4">

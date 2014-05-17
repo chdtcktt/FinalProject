@@ -11,6 +11,8 @@ namespace FrontEnd
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["authentication"] != "o5kF4VGTwOMe7GMkwHSM")
+                Response.Redirect("Default.aspx");
 
         }
 
