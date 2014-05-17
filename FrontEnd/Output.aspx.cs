@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +11,14 @@ namespace FrontEnd
     public partial class Output : System.Web.UI.Page
     {
 
+        ServiceReference1.ReportSvcSoapClient Svc;
+        List<string> collection;
+        public Output()
+        {
+            Svc = new ServiceReference1.ReportSvcSoapClient();
+
+        }
+        
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -20,11 +29,33 @@ namespace FrontEnd
 
 
             int id = Convert.ToInt32(Request.QueryString["id"]);
+            collection = Svc.GetReport(id);
+            ExportToText();
 
-            ServiceReference1.ReportSvcSoapClient Svc = new ServiceReference1.ReportSvcSoapClient();
             
-            List<string> collection = Svc.GetReport(id);
+      
+        }
 
+        protected void ButtonExportToCSV_Click(object sender, EventArgs e)
+        {
+            string value = "";
+            foreach (var item in collection)
+	        {
+                value += item + ",";
+		 
+	        }
+
+            TextBox1.Text = value;
+
+        }
+
+        protected void ButtonExportToText_Click(object sender, EventArgs e)
+        {
+            ExportToText();
+        }
+ 
+        private void ExportToText()
+        {
             string value = "";
             foreach (var item in collection)
             {
@@ -32,8 +63,6 @@ namespace FrontEnd
             }
 
             TextBox1.Text = value;
-
-      
         }
 
 
